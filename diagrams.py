@@ -58,41 +58,41 @@ def label(x, y, text, color="#646464", anchor="start", size=13):
             f'fill="{color}">{html.escape(text)}</text>')
 
 
-def svg(w, h, body, title, minw):
+def svg(w, h, body, title, minw, show=None):
+    """w、h 是画布坐标；show 是电脑上显示的宽度（缺省等于 w）；minw 是手机上不再缩小的下限，0 表示一直缩到框宽。"""
     defs = ('<defs>'
             f'<marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="{LINE}"/></marker>'
             '<marker id="r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e5484d"/></marker>'
             '</defs>')
-    return (f'<figure class="diagram"><svg viewBox="0 0 {w} {h}" width="{w}" style="min-width:{minw}px" role="img" '
+    style = f' style="min-width:{minw}px"' if minw else ""
+    return (f'<figure class="diagram"><svg viewBox="0 0 {w} {h}" width="{show or w}"{style} role="img" '
             f'aria-label="{html.escape(title)}" font-family="{FONT}">{defs}{body}</svg></figure>')
 
 
 def loop():
-    # 整张图控制在 520 宽以内：手机上不用横滑也能看到「不够就回到 ①」那条回头的线
-    cx = 220
+    # 画布只有 330 宽：手机上框里能用的宽度约 322，这样几乎 1:1 显示，字不会缩到看不清，
+    # 「不够就回到 ①」那条回头的线不用横滑也看得到。电脑上放大到 440 显示。
+    cx = 130
     b = ""
-    b += '<rect x="30" y="92" width="440" height="384" rx="16" fill="#fbfcfc" stroke="#00c29a" stroke-width="1.5" stroke-dasharray="6 5"/>'
-    b += label(454, 112, "承载框架（Harness）管这一圈", "#009273", anchor="end", size=12.5)
-    b += box(cx - 80, 20, 160, 44, "用户提问", "soft", pill=True)
-    b += box(cx - 130, 134, 260, 52, "① 模型想：还需要查什么？")
-    b += box(cx - 130, 226, 260, 52, "② 调用一个工具")
-    b += box(cx - 130, 318, 260, 52, "③ 拿到结果")
-    b += diamond(cx, 426, 220, 80, "够回答了吗？")
-    b += box(cx - 80, 510, 160, 44, "给出答复", "ok", pill=True)
-    for y1, y2 in ((64, 134), (186, 226), (278, 318), (370, 386), (466, 510)):
+    b += '<rect x="6" y="88" width="318" height="372" rx="14" fill="#fbfcfc" stroke="#00c29a" stroke-width="1.5" stroke-dasharray="6 5"/>'
+    b += label(312, 106, "承载框架（Harness）管这一圈", "#009273", anchor="end", size=12.5)
+    b += box(cx - 70, 16, 140, 44, "用户提问", "soft", pill=True)
+    b += box(cx - 112, 126, 224, 50, "① 模型想：还要查什么？")
+    b += box(cx - 112, 212, 224, 50, "② 调用一个工具")
+    b += box(cx - 112, 298, 224, 50, "③ 拿到结果")
+    b += diamond(cx, 404, 204, 76, "够回答了吗？")
+    b += box(cx - 70, 488, 140, 44, "给出答复", "ok", pill=True)
+    for y1, y2 in ((60, 126), (176, 212), (262, 298), (348, 366), (442, 488)):
         b += arrow([(cx, y1), (cx, y2)])
-    b += label(cx + 12, 490, "够了")
+    b += label(cx + 10, 470, "够了")
     # 回路：从判定框右尖出，绕回 ①
-    b += arrow([(cx + 110, 426), (410, 426), (410, 160), (cx + 130, 160)])
-    b += label(418, 284, "不够")
-    b += label(418, 302, "再查")
-    # 说明放在图下方，分两列
-    b += label(30, 592, "这一圈里我们加了：", "#1a1a1a", size=13)
-    notes = ["按岗位发放的工具名单", "13 个技能（固定动作）", "6 个守卫（关不掉）", "预算上限", "每一轮的记录"]
-    for i, t in enumerate(notes):
-        x, y = (30 if i < 3 else 270), 622 + (i if i < 3 else i - 3) * 26
-        b += f'<circle cx="{x + 4}" cy="{y}" r="2.5" fill="#00c29a"/>' + label(x + 16, y, t, size=12.5)
-    return svg(500, 700, b, "智能体的工作循环：提问、想、调用工具、拿结果、判断够不够，不够就再查", 330)
+    b += arrow([(cx + 102, 404), (274, 404), (274, 151), (cx + 112, 151)])
+    b += label(281, 268, "不够")
+    b += label(281, 286, "再查")
+    b += label(8, 566, "这一圈里我们加了：", "#1a1a1a", size=13)
+    for i, t in enumerate(["按岗位发放的工具名单", "13 个技能（固定动作）", "6 个守卫（关不掉）", "预算上限", "每一轮的记录"]):
+        b += f'<circle cx="12" cy="{594 + i * 25}" r="2.5" fill="#00c29a"/>' + label(24, 594 + i * 25, t, size=13)
+    return svg(330, 710, b, "智能体的工作循环：提问、想、调用工具、拿结果、判断够不够，不够就再查", 0, show=440)
 
 
 def write_gate():
