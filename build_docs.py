@@ -124,6 +124,8 @@ TEMPLATE = """<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>文档 · 澜绣云裳</title>
 <meta name="description" content="澜绣云裳功能文档：每个功能的场景、使用岗位、痛点、解决方式、输入与输出。">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/logo-180.png">
 <link rel="stylesheet" href="style.css">
 <script>document.documentElement.classList.remove('nojs')</script>
 </head>
@@ -131,7 +133,7 @@ TEMPLATE = """<!doctype html>
 <!-- 本页由 build_docs.py 从《澜绣云裳agent-产品介绍.md》生成，改内容请改那份 md -->
 <header class="head">
   <div class="wrap" style="max-width:1280px">
-    <a class="logo" href="index.html"><span class="logo-mark">澜</span>澜绣云裳</a>
+    <a class="logo" href="index.html"><img class="logo-img" src="assets/logo-180.png" alt="澜绣云裳 LONSUEE 标志" width="32" height="32">澜绣云裳</a>
     <nav class="nav"><a href="index.html">首页</a><a class="on" href="docs.html">文档</a></nav>
     <a class="btn btn-dark btn-sm head-cta" href="https://github.com/843773296-rgb/lanxiu-yunshang-agent" rel="noopener">公开仓库</a>
     <button class="btn btn-line btn-sm menu-btn" id="menu">目录</button>
