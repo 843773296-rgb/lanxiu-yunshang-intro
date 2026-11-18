@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="zh-CN" class="nojs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>文档 · 澜绣云裳</title>
+<meta name="description" content="澜绣云裳功能文档：每个功能的场景、使用岗位、痛点、解决方式、输入与输出。">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.remove('nojs')</script>
+</head>
+<body>
+<!-- 本页由 build_docs.py 从《澜绣云裳agent-产品介绍.md》生成，改内容请改那份 md -->
+<header class="head">
+  <div class="wrap" style="max-width:1280px">
+    <a class="logo" href="index.html"><span class="logo-mark">澜</span>澜绣云裳</a>
+    <nav class="nav"><a href="index.html">首页</a><a class="on" href="docs.html">文档</a></nav>
+    <button class="btn btn-line btn-sm menu-btn" id="menu">目录</button>
+  </div>
+</header>
+<div class="docs">
+<aside class="side" id="side">
+<div class="grp">入门</div>
+<a href="#intro" data-id="intro">简介</a>
+<a href="#problems" data-id="problems">它解决什么问题</a>
+<a href="#roles" data-id="roles">谁在用</a>
+<a href="#diff" data-id="diff">和聊天机器人的区别</a>
+<div class="grp">功能说明</div>
+<a href="#chat" data-id="chat">对话助手</a>
+<a href="#queue" data-id="queue">研判队列</a>
+<a href="#scheme" data-id="scheme">方案配置</a>
+<a href="#wearers" data-id="wearers">着装人管理</a>
+<a href="#duty" data-id="duty">值班台</a>
+<a href="#fabric" data-id="fabric">面料学堂</a>
+<a href="#report" data-id="report">经营报告</a>
+<a href="#admin" data-id="admin">管理后台</a>
+<div class="grp">安全与边界</div>
+<a href="#sign" data-id="sign">哪些事必须人签字</a>
+<a href="#not" data-id="not">明确不做的事</a>
+<a href="#privacy" data-id="privacy">客户信息保护</a>
+<div class="grp">验证与现状</div>
+<a href="#verify" data-id="verify">怎么保证它是对的</a>
+<a href="#compare" data-id="compare">三种做法的对比</a>
+<a href="#status" data-id="status">数据与现状说明</a>
+<div class="grp">常见问题</div>
+<a href="#faq" data-id="faq">常见问题</a>
+</aside>
+<main class="doc-main">
+<article class="doc" id="intro">
+<div class="crumb">入门</div>
+<h1>简介</h1>
+<p class="intro">澜绣云裳是给汉服定制门店用的 AI 运营平台。店里的人用大白话提问，智能体去查业务库、按固定口径计算，给出带出处的答复。要改数据时，AI 只出草稿，由人签字，每一步留痕、能撤、能查。</p>
+<h2>它由两部分组成</h2>
+<table><tr><th>部分</th><th>是什么</th><th>谁在上面工作</th></tr><tr><td>管理后台</td><td>业务记录系统：客户、订单、商品、会员、审批、知识库</td><td>全体员工</td></tr><tr><td>AI 运营平台</td><td>对话助手、研判队列、方案配置、着装人管理、值班台、面料学堂、经营报告</td><td>智能体出草稿，人签字</td></tr></table>
+<h2>一句话讲清它做什么</h2>
+<table><tr><th>要素</th><th>内容</th></tr><tr><td>业务场景</td><td>汉服定制：预约到店、量体、选形制面料工艺、白坯试衣、开裁、织造刺绣、发货签收，一单常常超过一百天</td></tr><tr><td>谁用</td><td>门店和总部的七种岗位：顾问、店长、工匠、版师、财务、售后、总部运营</td></tr><tr><td>痛点</td><td>待处理事项看着清空了但事情没办完；能不能做全凭经验；同一位客户多份档案</td></tr><tr><td>怎么解决</td><td>把每件事拆成 AI 能做的一半和必须由人签字的一半</td></tr><tr><td>输入</td><td>员工的提问、业务库里的记录、手写整理的工艺知识</td></tr><tr><td>输出</td><td>带出处的答复、等人签字的处理草稿、经营报告</td></tr></table>
+<h2>能做什么</h2>
+<ul><li><b>查</b>：这套工艺能不能做、面料配不配、版型有哪些尺码、这单走到哪一步</li><li><b>算</b>：报价、工期倒推、尺码推荐、儿童成长身高预测、产能排期、裁片用料</li><li><b>判</b>：该不该跟进、该不该改版、售后谁担责、库存该不该补</li><li><b>写</b>：派单、改派、结单、审批、调整会员等级。这类操作都要先预演，再由人确认</li></ul>
+
+<div class="pager"><a class="hide"></a><a class="next" href="#problems"><small>下一页</small>它解决什么问题</a></div>
+</article>
+<article class="doc" id="problems">
+<div class="crumb">入门</div>
+<h1>它解决什么问题</h1>
+<p class="intro">汉服定制不是买成衣。一件定制单从预约到签收要经过八个环节，任何一环出岔子，都要有人发现、定因、处理。</p>
+<table><tr><th>现在怎么做</th><th>断在哪</th><th>代价</th></tr><tr><td>退款失败、重复建档、差评都进同一个待处理列表</td><td>列表只有「处理了」和「没处理」。AI 判过、人确认过、事情办完了，都叫「已销账」</td><td>看着清空了，钱其实没退成</td></tr><tr><td>顾问凭经验回答能不能做、多久拿到、多少钱</td><td>面料和工艺配不配、哪道工序卡工期，这些知识在老师傅脑子里</td><td>答应了做不出来，或者婚礼前交不了货</td></tr><tr><td>同一位客户在三家店各建一份档案</td><td>没有地方认人，也没有地方安全地合并</td><td>会员等级、积分、客户人数都算错</td></tr></table>
+<h2>解决思路</h2>
+<p>把每件事拆成两半：</p>
+<ol><li><b>AI 能做的一半</b>：查库、按口径计算、整理证据、写出处理草稿。</li><li><b>必须由人签字的一半</b>：采纳还是改判、要不要升级、事情是否真的办完。</li></ol>
+<p>两半之间的每一步都有记录，可以撤回，可以追查。</p>
+
+<div class="pager"><a href="#intro"><small>上一页</small>简介</a><a class="next" href="#roles"><small>下一页</small>谁在用</a></div>
+</article>
+<article class="doc" id="roles">
+<div class="crumb">入门</div>
+<h1>谁在用</h1>
+<p class="intro">系统按 3 家门店加总部、七种岗位来设计。每种岗位能用的功能和要遵守的规矩不同，助手按岗位配置。</p>
+<table><tr><th>岗位</th><th>典型的问题</th></tr><tr><td>顾问</td><td>这位客户该跟进吗？这套配置能做吗，多少钱，多久？</td></tr><tr><td>店长</td><td>这个月店里怎么样？这单该派给谁？</td></tr><tr><td>工匠</td><td>我手上有哪些活？哪件要拖了？</td></tr><tr><td>版师</td><td>这个版型的裁片用料多少？这位客户要不要改版？</td></tr><tr><td>财务</td><td>这笔退款卡在哪？这单为什么对不上？</td></tr><tr><td>售后</td><td>这次返修该谁担责？这条差评怎么确认？</td></tr><tr><td>总部运营</td><td>哪些客户在流失？活动效果如何？</td></tr></table>
+
+<div class="pager"><a href="#problems"><small>上一页</small>它解决什么问题</a><a class="next" href="#diff"><small>下一页</small>和聊天机器人的区别</a></div>
+</article>
+<article class="doc" id="diff">
+<div class="crumb">入门</div>
+<h1>和聊天机器人的区别</h1>
+<table><tr><th></th><th>聊天机器人</th><th>澜绣云裳</th></tr><tr><td>数字从哪来</td><td>模型自己的记忆</td><td>必须从业务库里查，查不到就说查不到</td></tr><tr><td>规矩谁定</td><td>模型当场组织</td><td>业务口径提前定好并只写一处，AI 只负责取数</td></tr><tr><td>能不能改数据</td><td>不能，或者不受约束</td><td>能，但只限登记过的操作，先预演，再由人签字</td></tr></table>
+<h2>为什么口径只写一处</h2>
+<p>以「哪种情况算客户流失」为例。如果这条标准分别写在三个功能里，时间一长就会出现三个版本，而且每个版本单独看都说得通。系统把这类标准集中放在一处，所有功能都从这里取，改一次全部生效。</p>
+
+<div class="pager"><a href="#roles"><small>上一页</small>谁在用</a><a class="next" href="#chat"><small>下一页</small>对话助手</a></div>
+</article>
+<article class="doc" id="chat">
+<div class="crumb">功能说明</div>
+<h1>对话助手</h1>
+<p class="intro">按岗位配置的问答助手。顾问、店长、财务登录后看到的是各自岗位的助手，能查的内容和要遵守的规矩不同。</p>
+<table><tr><th>要素</th><th>内容</th></tr><tr><td>场景</td><td>日常问事：查订单进度、算报价、判断某位客户该不该跟进</td></tr><tr><td>谁用</td><td>全部岗位</td></tr><tr><td>痛点</td><td>数字靠记忆，同一条规矩每个人说法不一样</td></tr><tr><td>怎么解决</td><td>每个岗位配不同的工具和规矩。数字必须从库里查，答复带出处，查不到就明说</td></tr><tr><td>输入</td><td>一句大白话提问</td></tr><tr><td>输出</td><td>带出处的答复</td></tr></table>
+<h2>你会感觉到什么</h2>
+<ul><li>答复里的数字都能看到来源，可以回到原始记录核对。</li><li>规矩要求助手查不到就明说，超出本岗位权限的事也要明说。每晚评测专门检查这两条。</li></ul>
+<h2>需要知道的代价</h2>
+<p>助手每次回答都要真实查询和计算，比普通聊天慢。各功能的响应时间没有单独测过；工单研判那次实测，智能体做法约 28 秒一条。</p>
+<div class="shot" data-name="对话助手（chat.png）"><img src="screenshots/chat.png" alt="对话助手界面"><span class="tag">演示数据</span></div>
+<div class="pager"><a href="#diff"><small>上一页</small>和聊天机器人的区别</a><a class="next" href="#queue"><small>下一页</small>研判队列</a></div>
+</article>
+<article class="doc" id="queue">
+<div class="crumb">功能说明</div>
+<h1>研判队列</h1>
+<p class="intro">系统每天扫出需要人处理的事项，智能体先查数据、写出处理草稿，再由人决定。</p>
+<table><tr><th>要素</th><th>内容</th></tr><tr><td>场景</td><td>处理退款失败、疑似重复客户、售后判责、差评</td></tr><tr><td>谁用</td><td>店长、售后、财务、总部运营</td></tr><tr><td>痛点</td><td>「AI 判了」「人认了」「事情办完了」混成一个「已销账」，看着清空了，钱没退成</td></tr><tr><td>怎么解决</td><td>AI 给出根因、建议和证据。人选择采纳、改判或升级。凭系统单号回执才能办结</td></tr><tr><td>输入</td><td>系统扫出的待处理事项</td></tr><tr><td>输出</td><td>可追溯的处理结论和办结回执</td></tr></table>
+<h2>一件事怎么走完</h2>
+<ol><li><b>扫出事项</b>：系统发现一笔退款失败。</li><li><b>AI 研判</b>：智能体查相关记录，给出根因、建议动作和证据。</li><li><b>人复核</b>：负责人采纳、改判，或者升级给上一级。</li><li><b>办结</b>：填入系统单号，系统核对这笔钱确实已退，才算办完。</li></ol>
+<h2>几条关键设计</h2>
+<ul><li><b>动钱两人经手</b>：退款由店长复核、财务办结。客户合并由店长认人、总部运营执行。</li><li><b>办结要回执</b>：没有回执的事项进不了「已办结」。</li><li><b>一笔流水只能登记一次</b>：登记已退时必须填渠道流水号，同一个流水号只能对应一笔退款。</li><li><b>合并可撤回</b>：重复档案只标记并入谁，数据不搬动，订单和积分只做关联。</li><li><b>可以重开</b>：复核人或总部运营可以重开一件事。已办结的改为开更正工单。</li></ul>
+<div class="note">差评的 AI 辅助目前默认关闭，页面上有明确提示。</div>
+<div class="shot" data-name="研判队列（queue.png）"><img src="screenshots/queue.png" alt="研判队列界面"><span class="tag">演示数据</span></div>
+<div class="pager"><a href="#chat"><small>上一页</small>对话助手</a><a class="next" href="#scheme"><small>下一页</small>方案配置</a></div>
+</article>
+<article class="doc" id="scheme">
+<div class="crumb">功能说明</div>
+<h1>方案配置</h1>
+<p class="intro">顾问在店里接待客户时，选好形制、面料、工艺，系统当场给出结论。</p>
+<table><tr><th>要素</th><th>内容</th></tr><tr><td>场景</td><td>客户问：这套能不能做，多少钱，什么时候能拿到</td></tr><tr><td>谁用</td><td>顾问</td></tr><tr><td>痛点</td><td>面料和工艺的相容关系、工期卡点靠经验。答应了才发现做不出或赶不上婚期</td></tr><tr><td>怎么解决</td><td>按工艺相容规则和产能排期，当场计算</td></tr><tr><td>输入</td><td>客户的选择和期望交付日期</td></tr><tr><td>输出</td><td>可行性、报价、工期、最晚下单日</td></tr></table>
+<h2>你会感觉到什么</h2>
+<ul><li>选了不相容的面料和工艺，系统会直接说明不能做以及原因。</li><li>输入婚期或活动日期，系统倒推出最晚哪天必须下单。</li><li>报价和工期来自同一套规则，不同顾问给出的结论一致。</li></ul>
+<div class="shot" data-name="方案配置（scheme.png）"><img src="screenshots/scheme.png" alt="方案配置界面"><span class="tag">演示数据</span></div>
+<div class="pager"><a href="#queue"><small>上一页</small>研判队列</a><a class="next" href="#wearers"><small>下一页</small>着装人管理</a></div>
+</article>
+<article class="doc" id="wearers">
+<div class="crumb">功能说明</div>
+<h1>着装人管理</h1>
+<p class="intro">定制服装的尺码应该跟着穿的人走，而不是跟着付款的人走。</p>
+<table><tr><th>要素</th><th>内容</th></tr><tr><td>场景</td><td>妈妈给女儿定制：付款人、收货人、量体对象是三个人</td></tr><tr><td>谁用</td><td>顾问</td></tr><tr><td>痛点</td><td>尺码记在付款人名下，孩子长高了没人知道该重新量</td></tr><tr><td>怎么解决</td><td>按穿的人管理尺码和复量提醒，儿童带成长身高预测</td></tr><tr><td>输入</td><td>量体记录</td></tr><tr><td>输出</td><td>尺码推荐、复量提醒</td></tr></table>
+<h2>你会感觉到什么</h2>
+<ul><li>付款人名下可以有多位着装人，各自有独立的尺码档案。</li><li>孩子的档案会给出成长身高预测，到了该复量的时候提醒顾问。</li></ul>
+<div class="shot" data-name="着装人管理（wearers.png）"><img src="screenshots/wearers.png" alt="着装人管理界面"><span class="tag">演示数据</span></div>
+<div class="pager"><a href="#scheme"><small>上一页</small>方案配置</a><a class="next" href="#duty"><small>下一页</small>值班台</a></div>
+</article>
+<article class="doc" id="duty">
+<div class="crumb">功能说明</div>
+<h1>值班台</h1>
+<table><tr><th>要素</th><th>内容</th></tr><tr><td>场景</td><td>当班时想知道今天的工作量和紧急程度</td></tr><tr><td>谁用</td><td>当班的人</td></tr><tr><td>痛点</td><td>不知道今天还剩多少件，哪件已经超时</td></tr><tr><td>怎么解决</td><td>一屏汇总待办情况</td></tr><tr><td>输入</td><td>待处理的事项</td></tr><tr><td>输出</td><td>剩余件数、超时件数、等得最久的一件等了多久</td></tr></table>
+
+<div class="pager"><a href="#wearers"><small>上一页</small>着装人管理</a><a class="next" href="#fabric"><small>下一页</small>面料学堂</a></div>
+</article>
+<article class="doc" id="fabric">
+<div class="crumb">功能说明</div>
+<h1>面料学堂</h1>
+<table><tr><th>要素</th><th>内容</th></tr><tr><td>场景</td><td>新顾问学习面料与工艺，老顾问接待时快速查证</td></tr><tr><td>谁用</td><td>顾问</td></tr><tr><td>痛点</td><td>面料和工艺知识多，新人记不住</td></tr><tr><td>怎么解决</td><td>知识按面料和工艺分类整理，可以查，也可以学</td></tr><tr><td>输入</td><td>手写整理的工艺知识</td></tr><tr><td>输出</td><td>可查询的学习页面</td></tr></table>
+
+<div class="pager"><a href="#duty"><small>上一页</small>值班台</a><a class="next" href="#report"><small>下一页</small>经营报告</a></div>
+</article>
+<article class="doc" id="report">
+<div class="crumb">功能说明</div>
+<h1>经营报告</h1>
+<table><tr><th>要素</th><th>内容</th></tr><tr><td>场景</td><td>每周回顾门店经营情况</td></tr><tr><td>谁用</td><td>店长、总部</td></tr><tr><td>痛点</td><td>周报靠人从各处拼表格</td></tr><tr><td>怎么解决</td><td>从业务库自动生成。店长看本店，总部看全部</td></tr><tr><td>输入</td><td>业务库里的记录</td></tr><tr><td>输出</td><td>周报和经营数据</td></tr></table>
+
+<div class="pager"><a href="#fabric"><small>上一页</small>面料学堂</a><a class="next" href="#admin"><small>下一页</small>管理后台</a></div>
+</article>
+<article class="doc" id="admin">
+<div class="crumb">功能说明</div>
+<h1>管理后台</h1>
+<p class="intro">所有业务记录的家。AI 运营平台查到的每一个数字都来自这里。</p>
+<table><tr><th>要素</th><th>内容</th></tr><tr><td>场景</td><td>管理客户、订单、商品、会员、审批、知识库</td></tr><tr><td>谁用</td><td>全体员工</td></tr><tr><td>痛点</td><td>三家店各自建档；导出的名单带完整手机号</td></tr><tr><td>怎么解决</td><td>统一档案，按岗位授权。页面上手机号只显示后四位，导出操作有记录</td></tr><tr><td>输入</td><td>日常业务操作</td></tr><tr><td>输出</td><td>业务记录和审批结果</td></tr></table>
+
+<div class="pager"><a href="#report"><small>上一页</small>经营报告</a><a class="next" href="#sign"><small>下一页</small>哪些事必须人签字</a></div>
+</article>
+<article class="doc" id="sign">
+<div class="crumb">安全与边界</div>
+<h1>哪些事必须人签字</h1>
+<p class="intro">AI 可以改数据，但范围和方式都有限制。</p>
+<table><tr><th>设计</th><th>意思</th></tr><tr><td>只限登记过的操作</td><td>AI 能执行的写操作有明确清单，清单之外的做不了</td></tr><tr><td>先预演</td><td>动手之前先展示会改什么</td></tr><tr><td>人签字</td><td>采纳、改判、升级、办结都由人决定</td></tr><tr><td>动钱两人经手</td><td>退款由店长复核、财务办结</td></tr><tr><td>办结要回执</td><td>系统核对单据状态，没有回执不算办完</td></tr><tr><td>可撤回</td><td>客户合并只做关联，可以撤回</td></tr><tr><td>全程留痕</td><td>谁在什么时候做了什么，都能查到</td></tr></table>
+<h2>开裁前的几道闸</h2>
+<p>有些环节系统会直接拦住，后台改状态也绕不过去：</p>
+<ul><li>白坯该试没试、试了没签字，订单不能进入生产。</li><li>返修的责任没判清楚，不能开工。</li><li>定制单签收要核验取件码。</li></ul>
+
+<div class="pager"><a href="#admin"><small>上一页</small>管理后台</a><a class="next" href="#not"><small>下一页</small>明确不做的事</a></div>
+</article>
+<article class="doc" id="not">
+<div class="crumb">安全与边界</div>
+<h1>明确不做的事</h1>
+<ul><li><b>不自动联系客户</b>：不自动发短信、微信，不自动打电话。对外的动作由人来按。</li><li><b>不替业务定标准</b>：门槛和口径由人决定，系统只执行。</li><li><b>证据不足不硬判</b>：查不到足够依据时，如实说明，不给结论。</li><li><b>不碰钱</b>：只查退款状态、找失败原因，不执行付款和退款。</li></ul>
+
+<div class="pager"><a href="#sign"><small>上一页</small>哪些事必须人签字</a><a class="next" href="#privacy"><small>下一页</small>客户信息保护</a></div>
+</article>
+<article class="doc" id="privacy">
+<div class="crumb">安全与边界</div>
+<h1>客户信息保护</h1>
+<ul><li>页面上的手机号只显示后四位。</li><li>导出名单会记入操作日志。</li><li>每个岗位只能看到本岗位需要的信息。店长看本店，总部看全部。</li><li>账户密码不以明文保存，AI 能用的查询工具拿不到账户口令信息。</li></ul>
+
+<div class="pager"><a href="#not"><small>上一页</small>明确不做的事</a><a class="next" href="#verify"><small>下一页</small>怎么保证它是对的</a></div>
+</article>
+<article class="doc" id="verify">
+<div class="crumb">验证与现状</div>
+<h1>怎么保证它是对的</h1>
+<ul><li><b>438 项自动检查</b>：每次改动都要全部通过才能发布，任何一项不过就不能发布。</li><li><b>每晚评测</b>：每天夜里用一批固定的问题真实运行智能体，早上出结果。</li><li><b>故意改坏再验</b>：新加一项检查时，先故意把被检查的东西改坏，确认检查真的会报错。</li><li><b>上线门槛四个零</b>：越权操作、重复执行、失败却显示成功、无依据办结，这四类问题的数量必须都是零。</li></ul>
+
+<div class="pager"><a href="#privacy"><small>上一页</small>客户信息保护</a><a class="next" href="#compare"><small>下一页</small>三种做法的对比</a></div>
+</article>
+<article class="doc" id="compare">
+<div class="crumb">验证与现状</div>
+<h1>三种做法的对比</h1>
+<p class="intro">同一件事（处理工单），我们用三种技术做法各做了一遍，并排比较。</p>
+<table><tr><th>做法</th><th>特点</th><th>判对</th><th>单条耗时</th></tr><tr><td>直接调用模型</td><td>最简单</td><td>24 / 24</td><td>约 12 秒</td></tr><tr><td>固定流程</td><td>步骤提前定好，大部分环节不需要模型</td><td>24 / 24</td><td>约 3 秒</td></tr><tr><td>智能体</td><td>模型自己规划步骤</td><td>20 / 24</td><td>约 28 秒</td></tr></table>
+<p><b>结论</b>：步骤能提前确定的事，用固定流程又快又便宜。智能体的价值在开放的问题上，代价是更慢、更贵。因此系统里两种做法并存，按事情的性质选用。</p>
+<div class="note warn">限定：这是 2026 年 10 月的一次实测，6 条工单各跑四轮，样本很小，不能当作大样本结论。当天把智能体改为只配必要工具的专用角色后，两轮均为 6 / 6。</div>
+
+<div class="pager"><a href="#verify"><small>上一页</small>怎么保证它是对的</a><a class="next" href="#status"><small>下一页</small>数据与现状说明</a></div>
+</article>
+<article class="doc" id="status">
+<div class="crumb">验证与现状</div>
+<h1>数据与现状说明</h1>
+<p class="intro">请在引用本文任何内容之前先读这一页。</p>
+<table><tr><th>事项</th><th>实际情况</th></tr><tr><td>品牌</td><td>「澜绣云裳」是虚构品牌</td></tr><tr><td>数据</td><td>全部是模拟数据：约 8000 位客户、2.6 万笔订单、3 家门店</td></tr><tr><td>上线状态</td><td>按真实落地的标准建设，尚未上线</td></tr><tr><td>经营成果</td><td>没有真实门店数据，不提供成交、效率提升类数字</td></tr><tr><td>运行花费</td><td>上线后智能体按调用量付费，花费随使用量变化</td></tr><tr><td>界面截图</td><td>截图中的姓名、电话均为模拟数据</td></tr></table>
+
+<div class="pager"><a href="#compare"><small>上一页</small>三种做法的对比</a><a class="next" href="#faq"><small>下一页</small>常见问题</a></div>
+</article>
+<article class="doc" id="faq">
+<div class="crumb">常见问题</div>
+<h1>常见问题</h1>
+<p class="intro"><b>AI 会不会自己把钱退了？</b></p>
+<p>不会。系统不执行付款和退款，只查退款状态、找失败原因。退款由人在支付渠道操作，办结时系统核对单据状态。</p>
+<p><b>AI 答错了怎么办？</b></p>
+<p>研判队列里，AI 的结论只是草稿，人可以改判。改判的结论由总部审核后，会成为以后评测 AI 的依据。</p>
+<p><b>为什么回答比普通聊天慢？</b></p>
+<p>助手每次回答都要真实查询业务库并计算。各功能的响应时间没有单独测过；在工单研判上实测，智能体做法约 28 秒一条，固定流程约 3 秒一条。</p>
+<p><b>能不能用在其他行业的定制门店？</b></p>
+<p>目前的规则和知识都是按汉服定制整理的。换行业需要重新整理工艺知识和业务口径，这部分没有做过，暂不承诺。</p>
+<p><b>现在有门店在用吗？</b></p>
+<p>没有。系统尚未上线，目前用模拟数据验证。</p>
+<p><b>代码在哪里可以看到？</b></p>
+<p>仓库是公开的：<a href="https://github.com/843773296-rgb/lanxiu-yunshang-agent" rel="noopener" style="color:var(--brand-deep)">https://github.com/843773296-rgb/lanxiu-yunshang-agent</a></p>
+
+<div class="pager"><a href="#status"><small>上一页</small>数据与现状说明</a><a class="hide"></a></div>
+</article>
+</main>
+</div>
+<script>
+var docs = document.querySelectorAll('.doc'), links = document.querySelectorAll('.side a'), side = document.getElementById('side');
+function show() {
+  var id = location.hash.slice(1);
+  if (!document.getElementById(id) || !document.getElementById(id).classList.contains('doc')) id = docs[0].id;
+  docs.forEach(function (d) { d.classList.toggle('on', d.id === id); });
+  links.forEach(function (a) { a.classList.toggle('on', a.dataset.id === id); });
+  side.classList.remove('open');
+  window.scrollTo(0, 0);
+}
+window.addEventListener('hashchange', show);
+show();
+document.getElementById('menu').addEventListener('click', function () { side.classList.toggle('open'); });
+document.querySelectorAll('.shot img').forEach(function (img) {
+  function empty() { img.parentNode.classList.add('empty'); }
+  if (img.complete && !img.naturalWidth) empty();
+  img.addEventListener('error', empty);
+});
+</script>
+</body>
+</html>

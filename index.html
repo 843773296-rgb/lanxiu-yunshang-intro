@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>澜绣云裳 · 汉服定制门店的 AI 运营平台</title>
+<meta name="description" content="店里的人用大白话问，智能体去查库、按固定口径算，给出带出处的答复；要动数据时 AI 出草稿、人签字。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="head">
+  <div class="wrap">
+    <a class="logo" href="index.html"><span class="logo-mark">澜</span>澜绣云裳</a>
+    <nav class="nav">
+      <a href="#pain">解决什么</a>
+      <a href="#features">功能</a>
+      <a href="#roles">岗位</a>
+      <a href="#safe">安全</a>
+      <a href="docs.html">文档</a>
+    </nav>
+    <a class="btn btn-dark btn-sm" href="docs.html">查看文档</a>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="pill"><i></i>汉服定制门店的 AI 运营平台</span>
+    <h1>店里的事，问一句<br>答复<em>带着出处</em>回来</h1>
+    <p class="lead">顾问、店长、财务用大白话提问，智能体去查业务库、按固定口径计算，告诉你这件能不能做、多少钱、多久交付、这笔退款卡在哪。要改数据时，AI 只出草稿，由人签字。</p>
+    <div class="actions">
+      <a class="btn btn-dark" href="docs.html">查看功能文档</a>
+      <a class="btn btn-line" href="#features">看四个核心功能</a>
+    </div>
+    <p class="hero-note">当前为演示版本：品牌为虚构，数据为模拟数据，尚未上线</p>
+    <div class="hero-shot">
+      <div class="shot" data-name="对话助手（hero.png）"><img src="screenshots/hero.png" alt="对话助手界面"><span class="tag">演示数据</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="pain">
+  <div class="wrap">
+    <div class="eyebrow">解决什么</div>
+    <h2 class="h2">一件定制单要走一百多天，<br>中间每一环都可能出岔子</h2>
+    <p class="sub">预约到店、量体、选形制面料工艺、白坯试衣、开裁、织造刺绣、发货签收。出了岔子，要有人发现、定因、处理。</p>
+    <div class="grid3">
+      <div class="card">
+        <div class="n">01</div>
+        <h3>列表清空了，钱其实没退成</h3>
+        <p>退款失败、重复建档、差评都进同一个待处理列表。AI 判过、人确认过、事情办完了，在列表里都叫「已销账」。</p>
+        <div class="cost">现在：分开记录，<b>办结必须有系统回执</b></div>
+      </div>
+      <div class="card">
+        <div class="n">02</div>
+        <h3>答应了，却做不出来或赶不上婚期</h3>
+        <p>面料和工艺配不配、哪道工序卡工期，这些知识在老师傅脑子里。顾问只能凭经验回答客户。</p>
+        <div class="cost">现在：当场给出<b>可行性、报价、工期、最晚下单日</b></div>
+      </div>
+      <div class="card">
+        <div class="n">03</div>
+        <h3>同一位客户，三家店三份档案</h3>
+        <p>没有地方认人，也没有地方安全地合并。会员等级、积分、客户人数都跟着算错。</p>
+        <div class="cost">现在：统一档案，<b>合并只做关联，可以撤回</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="features" style="padding-top:0">
+  <div class="wrap">
+    <div class="eyebrow">核心功能</div>
+    <h2 class="h2">四件每天都在发生的事</h2>
+    <div class="tabs" role="tablist">
+      <button class="on" data-t="chat">对话助手</button>
+      <button data-t="queue">研判队列</button>
+      <button data-t="scheme">方案配置</button>
+      <button data-t="wearers">着装人管理</button>
+    </div>
+
+    <div class="scene on" id="s-chat">
+      <div>
+        <h3>按岗位分的对话助手</h3>
+        <div class="who">全部岗位 · 日常问事</div>
+        <ul class="six">
+          <li><span>场景</span>查订单进度、算报价、判断某位客户该不该跟进</li>
+          <li><span>痛点</span>数字靠记忆，同一条规矩每个人说法不一样</li>
+          <li><span>怎么解决</span>每个岗位配不同的工具和规矩；数字必须从库里查，查不到就明说查不到</li>
+          <li><span>输入</span>一句大白话提问</li>
+          <li><span>输出</span>带出处的答复</li>
+        </ul>
+        <a class="more" href="docs.html#chat">查看文档 →</a>
+      </div>
+      <div class="shot" data-name="对话助手（chat.png）"><img src="screenshots/chat.png" alt="对话助手界面"><span class="tag">演示数据</span></div>
+    </div>
+
+    <div class="scene" id="s-queue">
+      <div>
+        <h3>研判队列：AI 出草稿，人签字</h3>
+        <div class="who">店长 · 售后 · 财务 · 总部运营</div>
+        <ul class="six">
+          <li><span>场景</span>处理退款失败、疑似重复客户、售后判责、差评</li>
+          <li><span>痛点</span>「AI 判了」「人认了」「办完了」混成一个状态，看着清空了钱没退</li>
+          <li><span>怎么解决</span>AI 给出根因、建议和证据；人采纳、改判或升级；凭系统单号回执才能办结；动钱的事两个人经手</li>
+          <li><span>输入</span>系统每天扫出的待处理事项</li>
+          <li><span>输出</span>可追溯的处理结论和办结回执</li>
+        </ul>
+        <a class="more" href="docs.html#queue">查看文档 →</a>
+      </div>
+      <div class="shot" data-name="研判队列（queue.png）"><img src="screenshots/queue.png" alt="研判队列界面"><span class="tag">演示数据</span></div>
+    </div>
+
+    <div class="scene" id="s-scheme">
+      <div>
+        <h3>方案配置：当场回答能不能做</h3>
+        <div class="who">顾问 · 店内接待定制客户</div>
+        <ul class="six">
+          <li><span>场景</span>客户选好形制、面料、工艺，问能不能做、多少钱、什么时候拿到</li>
+          <li><span>痛点</span>相容关系和工期卡点靠经验，答应了才发现做不出或赶不上</li>
+          <li><span>怎么解决</span>按工艺相容规则和产能排期，当场给出结论</li>
+          <li><span>输入</span>客户的选择和期望交付日期</li>
+          <li><span>输出</span>可行性、报价、工期、最晚下单日</li>
+        </ul>
+        <a class="more" href="docs.html#scheme">查看文档 →</a>
+      </div>
+      <div class="shot" data-name="方案配置（scheme.png）"><img src="screenshots/scheme.png" alt="方案配置界面"><span class="tag">演示数据</span></div>
+    </div>
+
+    <div class="scene" id="s-wearers">
+      <div>
+        <h3>着装人管理：尺码跟着穿的人走</h3>
+        <div class="who">顾问 · 一家人里有多位穿衣的人</div>
+        <ul class="six">
+          <li><span>场景</span>妈妈给女儿定制：付款的、收货的、量体的是三个人</li>
+          <li><span>痛点</span>尺码记在付款人名下，孩子长高了没人知道该重新量</li>
+          <li><span>怎么解决</span>按穿的人管理尺码和复量提醒，儿童带成长身高预测</li>
+          <li><span>输入</span>量体记录</li>
+          <li><span>输出</span>尺码推荐、复量提醒</li>
+        </ul>
+        <a class="more" href="docs.html#wearers">查看文档 →</a>
+      </div>
+      <div class="shot" data-name="着装人管理（wearers.png）"><img src="screenshots/wearers.png" alt="着装人管理界面"><span class="tag">演示数据</span></div>
+    </div>
+
+    <div class="grid4">
+      <a class="mini" href="docs.html#duty"><h4>值班台</h4><p>一屏看到今天还剩多少件、超时几件、等得最久的那件等了多久。</p></a>
+      <a class="mini" href="docs.html#fabric"><h4>面料学堂</h4><p>面料与工艺知识按类别整理，新顾问可以查，也可以学。</p></a>
+      <a class="mini" href="docs.html#report"><h4>经营报告</h4><p>周报自动生成。店长看本店，总部看全部。</p></a>
+      <a class="mini" href="docs.html#admin"><h4>管理后台</h4><p>客户、订单、商品、会员、审批统一记录，按岗位授权，手机号打码。</p></a>
+    </div>
+  </div>
+</section>
+
+<section class="block panel center">
+  <div class="wrap">
+    <div class="eyebrow">有什么不同</div>
+    <h2 class="h2">它不是聊天机器人</h2>
+    <p class="sub">区别不在于会不会说话，在于数字从哪来、规矩谁定、能不能动数据。</p>
+    <div class="cmp">
+      <div class="row hd"><div></div><div>聊天机器人</div><div>澜绣云裳</div></div>
+      <div class="row"><div>数字从哪来</div><div>模型自己的记忆</div><div>必须从业务库里查，查不到就说查不到</div></div>
+      <div class="row"><div>规矩谁定</div><div>模型当场组织</div><div>业务口径提前定好并只写一处，AI 只负责取数</div></div>
+      <div class="row"><div>能不能改数据</div><div>不能，或者不受约束</div><div>能，但只限登记过的操作，先预演，再由人签字</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="roles">
+  <div class="wrap">
+    <div class="eyebrow">谁在用</div>
+    <h2 class="h2">七种岗位，各问各的事</h2>
+    <p class="sub">每种岗位能用的功能和要遵守的规矩不一样，助手按岗位配置。</p>
+    <div class="roles">
+      <div class="role"><b>顾问</b><p>这套配置能做吗，多少钱，多久？</p></div>
+      <div class="role"><b>店长</b><p>这个月店里怎么样？这单该派给谁？</p></div>
+      <div class="role"><b>工匠</b><p>我手上有哪些活？哪件要拖了？</p></div>
+      <div class="role"><b>版师</b><p>这位客户要不要改版？裁片用料多少？</p></div>
+      <div class="role"><b>财务</b><p>这笔退款卡在哪？这单为什么对不上？</p></div>
+      <div class="role"><b>售后</b><p>这次返修该谁担责？</p></div>
+      <div class="role"><b>总部运营</b><p>哪些客户在流失？活动效果如何？</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="safe" style="padding-top:0">
+  <div class="wrap">
+    <div class="eyebrow">安全与可控</div>
+    <h2 class="h2">AI 做一半，<br>另一半必须由人签字</h2>
+    <div class="safe">
+      <div class="box">
+        <h3>每一步留痕、能撤、能查</h3>
+        <ul>
+          <li><b>动钱两人经手</b>：退款由店长复核、财务办结</li>
+          <li><b>办结要回执</b>：系统核对那张单确实已退，才算办完</li>
+          <li><b>一笔流水只能登记一次</b>：同一个渠道流水号只能对应一笔退款</li>
+          <li><b>合并可撤回</b>：重复档案只做关联，数据不搬动</li>
+          <li><b>客户信息打码</b>：页面上手机号只显示后四位，导出有记录</li>
+        </ul>
+      </div>
+      <div class="box dark">
+        <h3>明确不做的事</h3>
+        <ul>
+          <li>不自动给客户发短信、微信或打电话，对外动作由人来按</li>
+          <li>不替业务定标准，门槛和口径由人决定</li>
+          <li>证据不足时不硬下结论</li>
+          <li>不执行付款和退款，只查状态、找原因</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block panel center">
+  <div class="wrap">
+    <div class="eyebrow">做到什么程度</div>
+    <h2 class="h2">按真实门店的标准搭建和验证</h2>
+    <p class="sub">下面的数字都来自开发与验证过程，不是经营成果。</p>
+    <div class="facts">
+      <div class="fact"><div class="v">7</div><div class="k">种岗位</div><div class="q">覆盖 3 家门店加总部的岗位分工</div></div>
+      <div class="fact"><div class="v">127</div><div class="k">条业务规则</div><div class="q">按岗位配置给助手，口径只写一处</div></div>
+      <div class="fact"><div class="v">438</div><div class="k">项自动检查</div><div class="q">每次改动都要全部通过才能发布</div></div>
+      <div class="fact"><div class="v">2.6 万</div><div class="k">笔订单规模</div><div class="q">模拟数据，约 8000 位客户，用于验证</div></div>
+    </div>
+    <div class="notice">说明：「澜绣云裳」是虚构品牌，页面中的客户、订单均为模拟数据。系统按真实落地的标准建设，目前尚未上线，没有真实门店的经营数据，因此本页不提供成交或效率提升类数字。</div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2 class="h2">想知道每个功能具体怎么用</h2>
+    <div class="actions">
+      <a class="btn btn-dark" href="docs.html">阅读功能文档</a>
+      <a class="btn btn-line" href="https://github.com/843773296-rgb/lanxiu-yunshang-agent" rel="noopener">查看公开仓库</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <p>澜绣云裳 · 汉服定制门店的 AI 运营平台</p>
+      <p>品牌为虚构，数据为模拟数据，系统尚未上线。</p>
+    </div>
+    <div class="links">
+      <a href="docs.html">文档</a>
+      <a href="docs.html#status">数据与现状说明</a>
+      <a href="https://github.com/843773296-rgb/lanxiu-yunshang-agent" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// 截图没放进 screenshots/ 时显示占位框
+document.querySelectorAll('.shot img').forEach(function (img) {
+  function empty() { img.parentNode.classList.add('empty'); }
+  if (img.complete && !img.naturalWidth) empty();
+  img.addEventListener('error', empty);
+});
+// 功能切换
+document.querySelectorAll('.tabs button').forEach(function (b) {
+  b.addEventListener('click', function () {
+    document.querySelectorAll('.tabs button').forEach(function (x) { x.classList.toggle('on', x === b); });
+    document.querySelectorAll('.scene').forEach(function (s) { s.classList.toggle('on', s.id === 's-' + b.dataset.t); });
+  });
+});
+</script>
+</body>
+</html>
