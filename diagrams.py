@@ -68,11 +68,11 @@ def svg(w, h, body, title, minw):
 
 
 def loop():
-    cx = 250
+    # 整张图控制在 520 宽以内：手机上不用横滑也能看到「不够就回到 ①」那条回头的线
+    cx = 220
     b = ""
-    # 承载框架那一圈
-    b += '<rect x="70" y="92" width="440" height="384" rx="16" fill="#fbfcfc" stroke="#00c29a" stroke-width="1.5" stroke-dasharray="6 5"/>'
-    b += label(494, 112, "承载框架（Harness）管这一圈", "#009273", anchor="end", size=12.5)
+    b += '<rect x="30" y="92" width="440" height="384" rx="16" fill="#fbfcfc" stroke="#00c29a" stroke-width="1.5" stroke-dasharray="6 5"/>'
+    b += label(454, 112, "承载框架（Harness）管这一圈", "#009273", anchor="end", size=12.5)
     b += box(cx - 80, 20, 160, 44, "用户提问", "soft", pill=True)
     b += box(cx - 130, 134, 260, 52, "① 模型想：还需要查什么？")
     b += box(cx - 130, 226, 260, 52, "② 调用一个工具")
@@ -83,15 +83,16 @@ def loop():
         b += arrow([(cx, y1), (cx, y2)])
     b += label(cx + 12, 490, "够了")
     # 回路：从判定框右尖出，绕回 ①
-    b += arrow([(cx + 110, 426), (450, 426), (450, 160), (cx + 130, 160)])
-    b += label(458, 293, "不够")
-    b += label(458, 311, "再查")
-    # 右侧说明
-    x = 540
-    b += label(x, 150, "这一圈里我们加了：", "#1a1a1a", size=13)
-    for i, t in enumerate(["按岗位发放的工具名单", "13 个技能（固定动作）", "6 个守卫（关不掉）", "预算上限", "每一轮的记录"]):
-        b += f'<circle cx="{x + 4}" cy="{182 + i * 28}" r="2.5" fill="#00c29a"/>' + label(x + 16, 182 + i * 28, t, size=12.5)
-    return svg(720, 574, b, "智能体的工作循环：提问、想、调用工具、拿结果、判断够不够，不够就再查", 640)
+    b += arrow([(cx + 110, 426), (410, 426), (410, 160), (cx + 130, 160)])
+    b += label(418, 284, "不够")
+    b += label(418, 302, "再查")
+    # 说明放在图下方，分两列
+    b += label(30, 592, "这一圈里我们加了：", "#1a1a1a", size=13)
+    notes = ["按岗位发放的工具名单", "13 个技能（固定动作）", "6 个守卫（关不掉）", "预算上限", "每一轮的记录"]
+    for i, t in enumerate(notes):
+        x, y = (30 if i < 3 else 270), 622 + (i if i < 3 else i - 3) * 26
+        b += f'<circle cx="{x + 4}" cy="{y}" r="2.5" fill="#00c29a"/>' + label(x + 16, y, t, size=12.5)
+    return svg(500, 700, b, "智能体的工作循环：提问、想、调用工具、拿结果、判断够不够，不够就再查", 330)
 
 
 def write_gate():
