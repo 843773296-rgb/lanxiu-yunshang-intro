@@ -9,6 +9,8 @@ import re
 import sys
 from pathlib import Path
 
+import diagrams
+
 HERE = Path(__file__).parent
 SRC = HERE / "澜绣云裳agent-产品介绍.md"
 OUT = HERE / "docs.html"
@@ -27,7 +29,8 @@ IDS = {
     "常见问题": "faq",
 }
 # 有真实截图的页面
-SHOTS = {"chat": "对话助手", "queue": "研判队列", "scheme": "方案配置", "wearers": "着装人管理"}
+SHOTS = {}   # 截图位已去掉（用户 11-18 定）
+USED = set()  # 实际画出来的流程图，用来对账
 
 
 def inline(s):
@@ -46,7 +49,12 @@ def body(lines):
             j = i + 1; buf = []
             while j < len(lines) and not lines[j].startswith("```"):
                 buf.append(lines[j]); j += 1
-            out.append('<pre class="flow">' + html.escape("\n".join(buf), quote=False) + "</pre>"); i = j + 1
+            draw = diagrams.KEY.get(buf[0].strip()) if buf else None
+            if draw:   # 有对应流程图就画图；md 里的文字版留给飞书
+                out.append(draw()); USED.add(draw.__name__)
+            else:
+                out.append('<pre class="flow">' + html.escape("\n".join(buf), quote=False) + "</pre>")
+            i = j + 1
         elif ln.startswith("#### "):
             out.append(f"<h2>{inline(ln[5:])}</h2>"); i += 1
         elif ln.startswith("|"):
@@ -113,8 +121,11 @@ def main():
         main_html += (f'<article class="doc" id="{p["id"]}">\n<div class="crumb">{html.escape(gname)}</div>\n'
                       f'<h1>{html.escape(p["title"])}</h1>\n{content}\n{shot}\n{pager}\n</article>\n')
 
+    missing = {f.__name__ for f in diagrams.KEY.values()} - USED
+    if missing:
+        sys.exit(f"❌ 这些流程图在 md 里没找到对应的文字块（首行被改过？）：{sorted(missing)}")
     OUT.write_text(TEMPLATE.replace("{{SIDE}}", side).replace("{{MAIN}}", main_html), encoding="utf-8")
-    print(f"✅ 生成 {OUT.name}：{len(groups)} 个分组，{len(pages)} 页")
+    print(f"✅ 生成 {OUT.name}：{len(groups)} 个分组，{len(pages)} 页，{len(USED)} 张流程图")
 
 
 TEMPLATE = """<!doctype html>
@@ -166,11 +177,6 @@ function show() {
 window.addEventListener('hashchange', show);
 show();
 document.getElementById('menu').addEventListener('click', function () { side.classList.toggle('open'); });
-document.querySelectorAll('.shot img').forEach(function (img) {
-  function empty() { img.parentNode.classList.add('empty'); }
-  if (img.complete && !img.naturalWidth) empty();
-  img.addEventListener('error', empty);
-});
 </script>
 </body>
 </html>
