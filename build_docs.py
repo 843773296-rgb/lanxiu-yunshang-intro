@@ -18,8 +18,12 @@ IDS = {
     "简介": "intro", "它解决什么问题": "problems", "谁在用": "roles", "和聊天机器人的区别": "diff",
     "对话助手": "chat", "研判队列": "queue", "方案配置": "scheme", "着装人管理": "wearers",
     "值班台": "duty", "面料学堂": "fabric", "经营报告": "report", "管理后台": "admin",
+    "三条线总览": "lines", "导购线": "sales", "打版定款线": "pattern", "经营分析线": "analysis", "AI 管理平台": "aiplat",
+    "一张图看全": "arch", "工具、技能、守卫各管什么": "three", "八个业务服务": "services", "十三个技能": "skills",
+    "六个守卫": "guards", "四层闸": "gates", "智能体的工作循环": "loop",
+    "为什么做三代": "why3", "第一代：直接调用模型": "v1", "第二代：固定流程": "v2", "第三代：智能体": "v3", "横向对比与怎么选": "compare",
     "哪些事必须人签字": "sign", "明确不做的事": "not", "客户信息保护": "privacy",
-    "怎么保证它是对的": "verify", "三种做法的对比": "compare", "数据与现状说明": "status",
+    "怎么保证它是对的": "verify", "数据与现状说明": "status",
     "常见问题": "faq",
 }
 # 有真实截图的页面
@@ -38,6 +42,11 @@ def body(lines):
         ln = lines[i]
         if not ln.strip():
             i += 1
+        elif ln.startswith("```"):
+            j = i + 1; buf = []
+            while j < len(lines) and not lines[j].startswith("```"):
+                buf.append(lines[j]); j += 1
+            out.append('<pre class="flow">' + html.escape("\n".join(buf), quote=False) + "</pre>"); i = j + 1
         elif ln.startswith("#### "):
             out.append(f"<h2>{inline(ln[5:])}</h2>"); i += 1
         elif ln.startswith("|"):

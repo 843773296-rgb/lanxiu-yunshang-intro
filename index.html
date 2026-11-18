@@ -16,6 +16,7 @@
       <a class="on" href="index.html">首页</a>
       <a href="#pain">解决什么</a>
       <a href="#features">功能</a>
+      <a href="#arch">架构</a>
       <a href="#roles">岗位</a>
       <a href="#safe">安全</a>
       <a href="docs.html">文档</a>
@@ -163,6 +164,41 @@
       <div class="row"><div>数字从哪来</div><div>模型自己的记忆</div><div>必须从业务库里查，查不到就说查不到</div></div>
       <div class="row"><div>规矩谁定</div><div>模型当场组织</div><div>业务口径提前定好并只写一处，AI 只负责取数</div></div>
       <div class="row"><div>能不能改数据</div><div>不能，或者不受约束</div><div>能，但只限登记过的操作，先预演，再由人签字</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="arch">
+  <div class="wrap">
+    <div class="eyebrow">怎么做出来的</div>
+    <h2 class="h2">同一件事，三种做法各做一遍</h2>
+    <p class="sub">不预设哪种最好。用同一批工单并排比，弄清楚什么事该用哪一种。</p>
+    <div class="grid3">
+      <a class="card" href="docs.html#v1">
+        <div class="n">第一代</div>
+        <h3>直接调用模型</h3>
+        <p>自己手写循环：模型说要查什么，程序去查，把结果交回去，直到得出答案。</p>
+        <div class="cost">能答开放问题，<b>每条约 12 秒</b></div>
+      </a>
+      <a class="card" href="docs.html#v2">
+        <div class="n">第二代</div>
+        <h3>固定流程</h3>
+        <p>步骤由人事先写死，大部分环节是纯规则。模型只负责把结论写成人能读懂的话。</p>
+        <div class="cost">步骤能列全的事，<b>每条约 3 秒</b></div>
+      </a>
+      <a class="card" href="docs.html#v3">
+        <div class="n">第三代</div>
+        <h3>智能体</h3>
+        <p>模型自己规划步骤。我们负责治理：发哪些工具、哪些动作要拦、答完怎么检查。</p>
+        <div class="cost">步骤列不全的事，<b>每条约 28 秒</b></div>
+      </a>
+    </div>
+    <p class="hero-note" style="text-align:left">耗时来自 2026 年 10 月的一次实测：同一模型、6 条工单、连跑四轮，样本很小，只代表工单研判这一件事。<a class="more" style="margin:0 0 0 8px" href="docs.html#compare">看完整对比 →</a></p>
+    <div class="facts" style="margin-top:40px">
+      <a class="fact" href="docs.html#services" style="background:var(--sunken)"><div class="v">8</div><div class="k">个业务服务</div><div class="q">共 110 个工具，按岗位发放</div></a>
+      <a class="fact" href="docs.html#skills" style="background:var(--sunken)"><div class="v">13</div><div class="k">个技能</div><div class="q">漏一步就废的事，做成必须走完的步骤</div></a>
+      <a class="fact" href="docs.html#guards" style="background:var(--sunken)"><div class="v">6</div><div class="k">个守卫</div><div class="q">每一轮都运行，模型关不掉</div></a>
+      <a class="fact" href="docs.html#loop" style="background:var(--sunken)"><div class="v">29</div><div class="k">项交付前体检</div><div class="q">答复站不住就打回重答</div></a>
     </div>
   </div>
 </section>

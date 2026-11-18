@@ -267,3 +267,4 @@ footer .links { display: flex; gap: 24px; }
   .doc-main { padding: 32px 20px 72px; }
 }
 .doc td:first-child, .doc th:first-child { min-width: 7.5em; }
+.doc pre.flow { margin: 18px 0 0; padding: 20px 24px; border-radius: 12px; background: var(--sunken); border: 1px solid var(--border); font: 14px/1.75 "SF Mono", Menlo, Consolas, "PingFang SC", monospace; overflow-x: auto; white-space: pre; }
