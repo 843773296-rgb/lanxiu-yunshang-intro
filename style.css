@@ -218,3 +218,52 @@ footer .links { display: flex; gap: 24px; }
 }
 
 .doc td:first-child, .doc th:first-child { min-width: 6em; }
+
+/* ── 对照参考站截图的调整（11-18）── */
+/* 顶栏：导航居中，当前项绿色加下划线 */
+.head { background: #fff; backdrop-filter: none; -webkit-backdrop-filter: none; border-bottom: 1px solid var(--border); }
+.head .wrap { position: relative; }
+.nav { position: absolute; left: 50%; transform: translateX(-50%); height: 100%; align-items: center; gap: 36px; font-size: 15px; flex: none; }
+.nav a { position: relative; height: 100%; display: flex; align-items: center; }
+.nav a.on { color: var(--brand-deep); }
+.nav a.on::after { content: ""; position: absolute; left: 0; right: 0; bottom: 14px; height: 2px; border-radius: 2px; background: var(--brand); }
+.head .wrap > .btn { margin-left: auto; }
+/* 首屏：产品名大标题，薄荷绿光晕从下方两侧托起截图 */
+.hero { padding-top: calc(var(--header-h) + 104px); }
+.hero::before { top: auto; bottom: 0; left: 0; right: 0; width: auto; height: 78%; margin: 0; background: radial-gradient(60% 70% at 18% 62%, #e3fbf0 0%, rgba(227,251,240,0) 70%), radial-gradient(60% 70% at 82% 62%, #e3fbf0 0%, rgba(227,251,240,0) 70%); }
+.hero h1 { margin: 0; font-size: 104px; font-weight: 500; line-height: 1.1; letter-spacing: .02em; }
+.lead { max-width: 620px; font-size: 17px; line-height: 32px; }
+.hero .actions { margin-top: 36px; }
+.hero .btn-dark { height: 56px; padding: 0 32px; font-size: 18px; }
+.hero-link { display: inline-block; margin-top: 20px; font-size: 15px; color: var(--brand-deep); }
+.hero-link:hover { text-decoration: underline; }
+.hero-shot { max-width: 1140px; margin-top: 72px; }
+.hero-shot .shot { border: 0; border-radius: 12px 12px 0 0; background: #fff; box-shadow: 0 0 0 1px rgba(0,0,0,.04), 0 -8px 48px -16px rgba(0,120,90,.12); }
+/* 文档页：灰底侧栏，分组之间有分隔线，当前页绿色文字；右侧本页目录 */
+.docs { grid-template-columns: 300px minmax(0, 1fr) 240px; max-width: none; }
+.side { background: var(--sunken); border-right: 0; padding: 20px 28px 48px 36px; font-size: 15px; }
+.side .grp { margin: 20px -8px 4px; padding: 22px 8px 6px; border-top: 1px solid #e4e6e9; font-size: 15px; }
+.side .grp:first-child { border-top: 0; padding-top: 6px; }
+.side a { padding: 9px 0; border-radius: 0; }
+.side a:hover { background: none; }
+.side a.on { background: none; color: var(--brand-deep); }
+.doc-main { margin: 0 auto; padding: 56px 48px 96px; width: 100%; max-width: 860px; }
+.doc h1 { font-size: 34px; font-weight: 500; padding-bottom: 28px; border-bottom: 1px solid var(--border); }
+.doc .crumb { display: none; }
+.doc .intro { margin-top: 28px; font-size: 16px; line-height: 30px; color: var(--text); }
+.doc h2 { margin-top: 40px; padding-top: 0; border-top: 0; font-size: 26px; font-weight: 500; }
+.doc p, .doc li { font-size: 16px; line-height: 30px; }
+.toc { position: sticky; top: calc(var(--header-h) + 56px); align-self: start; margin-right: 32px; padding-left: 18px; border-left: 1px solid var(--border); font-size: 14px; }
+.toc b { display: block; margin-bottom: 8px; font-weight: 600; color: var(--text); }
+.toc a { display: block; padding: 6px 0; color: var(--text-2); }
+.toc a:hover { color: var(--brand-deep); }
+.toc:empty { border: 0; }
+@media (max-width: 1180px) { .docs { grid-template-columns: 280px minmax(0, 1fr); } .toc { display: none; } }
+@media (max-width: 960px) {
+  .hero h1 { font-size: 52px; }
+  .lead { font-size: 15px; line-height: 26px; }
+  .docs { grid-template-columns: 1fr; }
+  .head-cta { display: none; }
+  .doc-main { padding: 32px 20px 72px; }
+}
+.doc td:first-child, .doc th:first-child { min-width: 7.5em; }

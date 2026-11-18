@@ -124,6 +124,7 @@ TEMPLATE = """<!doctype html>
   <div class="wrap" style="max-width:1280px">
     <a class="logo" href="index.html"><span class="logo-mark">澜</span>澜绣云裳</a>
     <nav class="nav"><a href="index.html">首页</a><a class="on" href="docs.html">文档</a></nav>
+    <a class="btn btn-dark btn-sm head-cta" href="https://github.com/843773296-rgb/lanxiu-yunshang-agent" rel="noopener">公开仓库</a>
     <button class="btn btn-line btn-sm menu-btn" id="menu">目录</button>
   </div>
 </header>
@@ -132,6 +133,7 @@ TEMPLATE = """<!doctype html>
 {{SIDE}}</aside>
 <main class="doc-main">
 {{MAIN}}</main>
+<aside class="toc" id="toc"></aside>
 </div>
 <script>
 var docs = document.querySelectorAll('.doc'), links = document.querySelectorAll('.side a'), side = document.getElementById('side');
@@ -141,6 +143,13 @@ function show() {
   docs.forEach(function (d) { d.classList.toggle('on', d.id === id); });
   links.forEach(function (a) { a.classList.toggle('on', a.dataset.id === id); });
   side.classList.remove('open');
+  var toc = document.getElementById('toc'), hs = document.getElementById(id).querySelectorAll('h2');
+  toc.innerHTML = hs.length ? '<b>本页目录</b>' : '';
+  hs.forEach(function (h) {
+    var a = document.createElement('a'); a.textContent = h.textContent; a.href = 'javascript:void(0)';
+    a.addEventListener('click', function () { h.scrollIntoView({ behavior: 'smooth' }); });
+    toc.appendChild(a);
+  });
   window.scrollTo(0, 0);
 }
 window.addEventListener('hashchange', show);
