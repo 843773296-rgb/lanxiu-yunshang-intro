@@ -227,7 +227,7 @@ footer .links { display: flex; gap: 24px; }
   .doc h2 { font-size: 21px; }
   .doc table { display: block; overflow-x: auto; }
   .diagram { padding: 14px; text-align: left; }
-  .diagram::after { content: "图比屏幕宽时，可以左右滑动"; display: block; position: sticky; left: 0; margin-top: 8px; font-size: 12px; color: var(--text-3); }
+  .diagram:not(.fit)::after { content: "图比屏幕宽时，可以左右滑动"; display: block; position: sticky; left: 0; margin-top: 8px; font-size: 12px; color: var(--text-3); }
   .menu-btn { display: inline-flex; }
   .pager { flex-direction: column; }
 }

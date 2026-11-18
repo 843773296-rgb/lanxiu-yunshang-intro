@@ -65,7 +65,8 @@ def svg(w, h, body, title, minw, show=None):
             '<marker id="r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e5484d"/></marker>'
             '</defs>')
     style = f' style="min-width:{minw}px"' if minw else ""
-    return (f'<figure class="diagram"><svg viewBox="0 0 {w} {h}" width="{show or w}"{style} role="img" '
+    cls = "diagram" if minw else "diagram fit"   # fit：手机上放得下，不显示「可以左右滑动」的提示
+    return (f'<figure class="{cls}"><svg viewBox="0 0 {w} {h}" width="{show or w}"{style} role="img" '
             f'aria-label="{html.escape(title)}" font-family="{FONT}">{defs}{body}</svg></figure>')
 
 
