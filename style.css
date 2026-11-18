@@ -274,3 +274,8 @@ footer .links { display: flex; gap: 24px; }
 html, body { overflow-x: clip; max-width: 100%; }
 .hero { overflow: hidden; }
 .scene > *, .grid3 > *, .grid4 > *, .facts > *, .roles > *, .safe > * { min-width: 0; }
+/* 手机上四个功能切换按钮排成两行两列，四个都看得见 */
+@media (max-width: 640px) {
+  .tabs { display: grid; grid-template-columns: 1fr 1fr; width: 100%; border-radius: 20px; overflow: visible; }
+  .tabs button { padding: 0 8px; }
+}
