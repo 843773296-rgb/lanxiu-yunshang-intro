@@ -268,6 +268,20 @@ footer .links { display: flex; gap: 24px; }
 .roi-notes p, .roi-notes li { font-size: 14px; line-height: 24px; color: var(--text-2); }
 .roi-notes p { margin: 8px 0 0; }
 .roi-notes ul { margin: 8px 0 0; padding-left: 18px; }
+.roi-build { margin-top: 16px; padding: 24px; border-radius: var(--r-card); background: var(--sunken); }
+.roi-build h3 { margin: 0; font-size: 17px; font-weight: 500; }
+.roi-build p { margin: 8px 0 0; font-size: 14px; line-height: 24px; color: var(--text-2); }
+.roi-build .bar { display: flex; height: 14px; margin-top: 16px; border-radius: 7px; overflow: hidden; }
+.roi-build .bar i { display: block; height: 100%; }
+.roi-build .its { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 32px; margin-top: 16px; }
+.roi-build .it { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; border-top: 1px solid var(--border); font-size: 14px; }
+.roi-build .it > i { flex: none; width: 10px; height: 10px; margin-top: 7px; border-radius: 3px; }
+.roi-build .it > div { flex: 1; min-width: 0; }
+.roi-build .it b { display: block; font-weight: 500; }
+.roi-build .it span { font-size: 13px; color: var(--text-3); line-height: 20px; }
+.roi-build .it em { flex: none; font-style: normal; color: var(--text-2); white-space: nowrap; }
+.roi-build .it em:last-child { width: 62px; text-align: right; color: var(--brand-deep); }
+@media (max-width: 960px) { .roi-build .its { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 960px) { .roi-stats { grid-template-columns: repeat(2, 1fr); } .roi-notes { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 520px) { .roi-stats { grid-template-columns: minmax(0, 1fr); } }
 
