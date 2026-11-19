@@ -256,6 +256,8 @@ footer .links { display: flex; gap: 24px; }
 .roi-table { min-width: 860px; }
 .roi-table .row { display: grid; grid-template-columns: 1.3fr 1.5fr 1.5fr 1.2fr .8fr; }
 .roi-table .row > div { padding: 16px 20px; font-size: 14px; line-height: 22px; color: var(--text-2); border-top: 1px solid var(--border); }
+.roi-table.three .row { grid-template-columns: 1.3fr 2.4fr .8fr 1.3fr; }
+.roi-table.three .row > div:nth-child(3) b { color: var(--brand-deep); }
 .roi-table .row.hd > div { border-top: 0; font-size: 13px; color: var(--text-3); background: var(--sunken); }
 .roi-table .row b { display: block; font-size: 15px; font-weight: 500; color: var(--text); }
 .roi-table .row span { font-size: 13px; color: var(--text-3); }

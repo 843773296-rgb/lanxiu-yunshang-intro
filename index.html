@@ -141,41 +141,46 @@
 <section class="block" id="roi">
   <div class="wrap">
     <div class="eyebrow">预估成效</div>
-    <h2 class="h2">一家门店一个月，预计省下约 77 小时</h2>
-    <p class="sub">这是按下面的假设推算出来的预估，不是实测结果。产品还没有在真实门店运行，换成你门店的数，结果会按比例变化。</p>
+    <h2 class="h2">三家门店加总部，一年预计带来约 53 万元收益</h2>
+    <p class="sub">这是按下面的假设推算出来的预估，不是实测结果。产品还没有在真实门店运行，换成你自己的数，结果会按比例变化。</p>
     <div class="roi-stats">
-      <div class="stat"><div class="v">约 77 <small>小时</small></div><div class="k">每月省下的人工</div><div class="q">接近半个全职岗位的工作量</div></div>
-      <div class="stat"><div class="v">约 3,900 <small>元</small></div><div class="k">折合人工成本</div><div class="q">按每小时 50 元的综合用人成本</div></div>
-      <div class="stat"><div class="v">约 500 <small>元</small></div><div class="k">每月模型调用费用</div><div class="q">按模型价目表和调用次数折算</div></div>
-      <div class="stat key"><div class="v">约 7–8 <small>倍</small></div><div class="k">省下的人工 ÷ 模型费用</div><div class="q">未计入系统搭建与维护的投入</div></div>
+      <div class="stat"><div class="v">约 400 <small>小时／月</small></div><div class="k">省下的人工</div><div class="q">相当于 2.3 个全职岗位</div></div>
+      <div class="stat"><div class="v">约 53 <small>万元／年</small></div><div class="k">预估总收益</div><div class="q">省人工、少损失、多成交三层相加</div></div>
+      <div class="stat"><div class="v">约 6 <small>万元／年</small></div><div class="k">运行成本</div><div class="q">模型调用费用加服务器与维护</div></div>
+      <div class="stat key"><div class="v">约 8 <small>个月</small></div><div class="k">收回搭建投入</div><div class="q">按一次性搭建投入 30 万元假设</div></div>
+    </div>
+    <div class="roi-scroll">
+      <div class="roi-table three">
+        <div class="row hd"><div>收益来源</div><div>怎么算（假设）</div><div>一年</div><div>把握</div></div>
+        <div class="row"><div><b>省下的人工</b><span>查数、研判、报告、出方案、记档</span></div><div>每月约 400 小时，按每小时 50 元的综合用人成本</div><div><b>约 24 万元</b></div><div>较大：只依赖用量和耗时两个假设</div></div>
+        <div class="row"><div><b>避免的损失</b><span>答应了做不出来、赶不上用件日期、退错款</span></div><div>每家店每月提前拦下 1 单做不成或赶不上的定制单，每单约 4,000 元；全公司每月少 1 笔约 1,500 元的退款差错</div><div><b>约 16 万元</b></div><div>中等：取决于现在出错有多频繁</div></div>
+        <div class="row"><div><b>多成交带来的毛利</b><span>当场告诉顾客能不能做、多少钱、多久</span></div><div>每家店每月 60 个定制方案，成交率提高 3 个百分点，每单约 4,000 元，毛利率按 50%</div><div><b>约 13 万元</b></div><div>较小：成交率的变化要靠试点验证</div></div>
+      </div>
     </div>
     <div class="roi-scroll">
       <div class="roi-table">
-        <div class="row hd"><div>环节</div><div>现在的做法（假设）</div><div>用了之后（假设）</div><div>每月的量（假设）</div><div>每月省下</div></div>
-        <div class="row"><div><b>研判队列</b><span>退款异常、售后判责、档案合并等</span></div><div>人从头查订单、流水、记录，每件 15 分钟</div><div>看 AI 草稿和证据后复核，每件 5 分钟</div><div>150 件，约每天 5 件</div><div><b>25 小时</b></div></div>
-        <div class="row"><div><b>对话助手</b><span>查工期、库存、客户档案、业绩</span></div><div>在后台翻几个页面，每次 4 分钟</div><div>问一句，看带出处的答复，每次 1 分钟</div><div>780 次，全店每天 30 次</div><div><b>39 小时</b></div></div>
-        <div class="row"><div><b>经营报告</b><span>日报、周报、月报</span></div><div>手工拉数、填表：日报 15 分钟，周报 2 小时，月报 4 小时</div><div>系统生成，人核对确认：日报 5 分钟，周报 30 分钟，月报 1 小时</div><div>日报 26 份，周报 4 份，月报 1 份</div><div><b>约 13 小时</b></div></div>
+        <div class="row hd"><div>省人工的环节</div><div>现在的做法（假设）</div><div>用了之后（假设）</div><div>每月的量（假设）</div><div>每月省下</div></div>
+        <div class="row"><div><b>对话助手</b><span>查工期、库存、客户档案、业绩</span></div><div>在后台翻几个页面，每次 4 分钟</div><div>问一句，看带出处的答复，每次 1 分钟</div><div>2,340 次，每家店每天 30 次</div><div><b>117 小时</b></div></div>
+        <div class="row"><div><b>方案配置</b><span>能不能做、用料、工期、报价</span></div><div>顾问手工核对并找人确认，每个方案 40 分钟</div><div>系统当场给结论，顾问核对，每个 10 分钟</div><div>180 个，每家店 60 个</div><div><b>90 小时</b></div></div>
+        <div class="row"><div><b>研判队列</b><span>退款异常、售后判责、档案合并等</span></div><div>人从头查订单、流水、记录，每件 15 分钟</div><div>看 AI 草稿和证据后复核，每件 5 分钟</div><div>450 件，每家店每天约 5 件</div><div><b>75 小时</b></div></div>
+        <div class="row"><div><b>接待记录整理</b><span>接待后把录音整理成档案</span></div><div>顾问凭记忆手写，每次 10 分钟</div><div>系统整理成稿，顾问确认，每次 3 分钟</div><div>624 次，每家店每天 8 次</div><div><b>73 小时</b></div></div>
+        <div class="row"><div><b>经营报告</b><span>日报、周报、月报</span></div><div>手工拉数、填表：日报 15 分钟，周报 2 小时，月报 4 小时</div><div>系统生成，人核对确认：日报 5 分钟，周报 30 分钟，月报 1 小时</div><div>三家店各一套，加总部汇总</div><div><b>约 49 小时</b></div></div>
       </div>
     </div>
     <div class="roi-notes">
       <div>
-        <h3>没有算进收益的</h3>
-        <p>少出一次错能挽回多少，取决于出错的频率，这个数要到门店试点后才知道，所以没有计入上面的合计。可以参考的量级：</p>
-        <ul>
-          <li>一件重工定制款赶不上用件日期而重做或退单，损失约等于这一单的金额。演示数据里这类款的单价中位数约 5,570 元。</li>
-          <li>一笔定金被重复退款，损失就是这笔定金。演示数据里定金最高 3,000 元。</li>
-        </ul>
+        <h3>只认最有把握的那一层，账也算得过来</h3>
+        <p>如果只算省下的人工，一年约 24 万元，扣掉约 6 万元运行成本后是 18 万元，按 30 万元搭建投入算，约 20 个月收回。加上后两层，缩短到约 8 个月。门店越多，搭建投入摊得越薄。</p>
       </div>
       <div>
-        <h3>没有算进成本的</h3>
+        <h3>没有算进去的</h3>
         <ul>
-          <li>系统搭建、部署和日常维护的投入。</li>
-          <li>员工学习使用的时间。</li>
-          <li>新增的人工环节：每份 AI 草稿都要人复核，退款多一步财务登记流水号。这是有意的设计，钱出门要经过两个人。</li>
+          <li>成本一侧：员工学习使用的时间；每份 AI 草稿都要人复核，退款多一步财务登记，这是有意的设计。</li>
+          <li>收益一侧：新顾问靠面料学堂更快上手、差评和超时减少带来的复购，这两项没有估数。</li>
         </ul>
       </div>
     </div>
-    <p class="fine">假设以一家 5 人左右、每月营业 26 天的门店为例。模型费用按每次研判约 0.5 元、每次对话约 0.5 元、每份报告约 2 元估算，汇率按 1 美元约 7.2 元。要把预估变成实测，需要在试点时记录「人从头查」和「看草稿复核」各自的耗时，以及草稿被改判的比例。<a class="more" style="margin:0 0 0 6px" href="docs.html#roi">看算法说明 →</a></p>
+    <p class="fine">假设以三家门店加总部、每月营业 26 天为例。运行成本按模型调用每月约 1,900 元、服务器与维护每月约 3,000 元估算；搭建投入 30 万元是假设值，请换成实际数字。要把预估变成实测，需要在试点时记录各环节用前用后的耗时、草稿被改判的比例、出错的次数和方案成交率。<a class="more" style="margin:0 0 0 6px" href="docs.html#roi">看算法说明 →</a></p>
   </div>
 </section>
 
