@@ -17,6 +17,7 @@
     <nav class="nav">
       <a class="on" href="index.html">首页</a>
       <a href="#features">功能</a>
+      <a href="#roi">成效</a>
       <a href="#arch">架构</a>
       <a href="#roles">岗位</a>
       <a href="#safe">安全</a>
@@ -137,6 +138,47 @@
   </div>
 </section>
 
+<section class="block" id="roi">
+  <div class="wrap">
+    <div class="eyebrow">预估成效</div>
+    <h2 class="h2">一家门店一个月，预计省下约 77 小时</h2>
+    <p class="sub">这是按下面的假设推算出来的预估，不是实测结果。产品还没有在真实门店运行，换成你门店的数，结果会按比例变化。</p>
+    <div class="roi-stats">
+      <div class="stat"><div class="v">约 77 <small>小时</small></div><div class="k">每月省下的人工</div><div class="q">接近半个全职岗位的工作量</div></div>
+      <div class="stat"><div class="v">约 3,900 <small>元</small></div><div class="k">折合人工成本</div><div class="q">按每小时 50 元的综合用人成本</div></div>
+      <div class="stat"><div class="v">约 500 <small>元</small></div><div class="k">每月模型调用费用</div><div class="q">按模型价目表和调用次数折算</div></div>
+      <div class="stat key"><div class="v">约 7–8 <small>倍</small></div><div class="k">省下的人工 ÷ 模型费用</div><div class="q">未计入系统搭建与维护的投入</div></div>
+    </div>
+    <div class="roi-scroll">
+      <div class="roi-table">
+        <div class="row hd"><div>环节</div><div>现在的做法（假设）</div><div>用了之后（假设）</div><div>每月的量（假设）</div><div>每月省下</div></div>
+        <div class="row"><div><b>研判队列</b><span>退款异常、售后判责、档案合并等</span></div><div>人从头查订单、流水、记录，每件 15 分钟</div><div>看 AI 草稿和证据后复核，每件 5 分钟</div><div>150 件，约每天 5 件</div><div><b>25 小时</b></div></div>
+        <div class="row"><div><b>对话助手</b><span>查工期、库存、客户档案、业绩</span></div><div>在后台翻几个页面，每次 4 分钟</div><div>问一句，看带出处的答复，每次 1 分钟</div><div>780 次，全店每天 30 次</div><div><b>39 小时</b></div></div>
+        <div class="row"><div><b>经营报告</b><span>日报、周报、月报</span></div><div>手工拉数、填表：日报 15 分钟，周报 2 小时，月报 4 小时</div><div>系统生成，人核对确认：日报 5 分钟，周报 30 分钟，月报 1 小时</div><div>日报 26 份，周报 4 份，月报 1 份</div><div><b>约 13 小时</b></div></div>
+      </div>
+    </div>
+    <div class="roi-notes">
+      <div>
+        <h3>没有算进收益的</h3>
+        <p>少出一次错能挽回多少，取决于出错的频率，这个数要到门店试点后才知道，所以没有计入上面的合计。可以参考的量级：</p>
+        <ul>
+          <li>一件重工定制款赶不上用件日期而重做或退单，损失约等于这一单的金额。演示数据里这类款的单价中位数约 5,570 元。</li>
+          <li>一笔定金被重复退款，损失就是这笔定金。演示数据里定金最高 3,000 元。</li>
+        </ul>
+      </div>
+      <div>
+        <h3>没有算进成本的</h3>
+        <ul>
+          <li>系统搭建、部署和日常维护的投入。</li>
+          <li>员工学习使用的时间。</li>
+          <li>新增的人工环节：每份 AI 草稿都要人复核，退款多一步财务登记流水号。这是有意的设计，钱出门要经过两个人。</li>
+        </ul>
+      </div>
+    </div>
+    <p class="fine">假设以一家 5 人左右、每月营业 26 天的门店为例。模型费用按每次研判约 0.5 元、每次对话约 0.5 元、每份报告约 2 元估算，汇率按 1 美元约 7.2 元。要把预估变成实测，需要在试点时记录「人从头查」和「看草稿复核」各自的耗时，以及草稿被改判的比例。<a class="more" style="margin:0 0 0 6px" href="docs.html#roi">看算法说明 →</a></p>
+  </div>
+</section>
+
 <section class="block panel center">
   <div class="wrap">
     <div class="eyebrow">有什么不同</div>
@@ -252,7 +294,7 @@
       <a class="btn btn-dark" href="docs.html">阅读功能文档</a>
       <a class="btn btn-line" href="https://github.com/843773296-rgb/lanxiu-yunshang-agent" rel="noopener">查看公开仓库</a>
     </div>
-    <div class="notice">说明：「澜绣云裳」是虚构品牌，页面中的客户、订单均为模拟数据；服装图片是 AI 生成的商品效果图，不是实物照片。系统按真实落地的标准建设，目前尚未上线，没有真实门店的经营数据，因此本页不提供成交或效率提升类数字。</div>
+    <div class="notice">说明：「澜绣云裳」是虚构品牌，页面中的客户、订单均为模拟数据；服装图片是 AI 生成的商品效果图，不是实物照片。系统按真实落地的标准建设，目前尚未上线，没有真实门店的经营数据。页面上「预估成效」一节的数字是按所列假设推算的预估，不是实测结果，也不代表任何一家门店的实际成交或效率。</div>
   </div>
 </section>
 

@@ -242,6 +242,33 @@ footer .links { display: flex; gap: 24px; }
   .grid4 { grid-template-columns: 1fr; }
   .feat dl { grid-template-columns: 56px 1fr; }
 }
+/* 预估成效 */
+.roi-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 32px; }
+.roi-stats > * { min-width: 0; }
+.stat { padding: 24px; border-radius: var(--r-card); background: var(--sunken); }
+.stat.key { background: var(--brand-50); }
+.stat .v { font-size: 34px; font-weight: 500; line-height: 1.2; white-space: nowrap; }
+.stat .v small { font-size: 15px; font-weight: 400; color: var(--text-2); }
+.stat.key .v { color: var(--brand-deep); }
+.stat .k { margin-top: 8px; font-size: 15px; }
+.stat .q { margin-top: 4px; font-size: 13px; color: var(--text-3); line-height: 20px; }
+.roi-scroll { margin-top: 16px; overflow-x: auto; border-radius: var(--r-card); border: 1px solid var(--border); }
+.roi-table { min-width: 860px; }
+.roi-table .row { display: grid; grid-template-columns: 1.3fr 1.5fr 1.5fr 1.2fr .8fr; }
+.roi-table .row > div { padding: 16px 20px; font-size: 14px; line-height: 22px; color: var(--text-2); border-top: 1px solid var(--border); }
+.roi-table .row.hd > div { border-top: 0; font-size: 13px; color: var(--text-3); background: var(--sunken); }
+.roi-table .row b { display: block; font-size: 15px; font-weight: 500; color: var(--text); }
+.roi-table .row span { font-size: 13px; color: var(--text-3); }
+.roi-table .row > div:last-child b { color: var(--brand-deep); }
+.roi-notes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 16px; }
+.roi-notes > div { min-width: 0; padding: 24px; border-radius: var(--r-card); background: var(--sunken); }
+.roi-notes h3 { margin: 0; font-size: 17px; font-weight: 500; }
+.roi-notes p, .roi-notes li { font-size: 14px; line-height: 24px; color: var(--text-2); }
+.roi-notes p { margin: 8px 0 0; }
+.roi-notes ul { margin: 8px 0 0; padding-left: 18px; }
+@media (max-width: 960px) { .roi-stats { grid-template-columns: repeat(2, 1fr); } .roi-notes { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 520px) { .roi-stats { grid-template-columns: minmax(0, 1fr); } }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .btn, .mini, a.card, a.fact { transition: none; }
